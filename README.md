@@ -1,10 +1,14 @@
-# Modern Information Retrieval
+# Modern Information Retrieval Summary
 
 **Fall 2021**
 
 A not-complete summary of the “Introduction to Information Retrieval” book, mainly in English, with some Persian in between.
 
-[Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+Math equations are not shown correctly in Github. You can clone and use markdown preview features of editors such as VScode.
+
+Link to book: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+
+----
 
 [Chapter 1 - Boolean retrieval](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%201%20-%20Boolean%20retrieval%2011860748be2444688f58915fcb35e208.md)
 
