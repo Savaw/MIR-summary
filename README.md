@@ -4,11 +4,20 @@
 
 A not-complete summary of the “Introduction to Information Retrieval” book, mainly in English, with some Persian in between.
 
-Math equations are not shown correctly in Github. You can clone and use markdown preview features of editors such as VScode.
+Math equations are not shown correctly in Github. You can:
 
-Link to book: [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+Clone and use markdown preview features of editors such as VScode 
 
-----
+OR
+
+**Check it [on Notion](https://savaw.notion.site/Modern-Information-Retrieval-c9a4a6f882a148cf98764fcefb3974a1).** (Recommended)
+
+
+## Source
+[Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
+
+
+## Table of Content
 
 [Chapter 1 - Boolean retrieval](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%201%20-%20Boolean%20retrieval%2011860748be2444688f58915fcb35e208.md)
 
