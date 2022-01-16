@@ -94,7 +94,7 @@ p_t = P(x_t = 1|R = 1, q) → the probability of a term appearing in a document 
 
 Assumption 2: terms not occurring in the query are equally likely to occur in relevant and nonrelevant documents: that is, if q_t = 0 then p_t = u_t.
 
-Then we need only consider terms in the products that appear in the query:
+Then we need only consider terms in the products that appear in the query: (q_t = 1)
 
 ![Screen Shot 2021-12-14 at 20.16.52.png](Chapter%2011%20-%20Probabilistic%20information%20retrieval%201862234deabf409db588da5a9b45e7f9/Screen_Shot_2021-12-14_at_20.16.52.png)
 
@@ -127,7 +127,7 @@ The $c_t$ quantities function as term weights in the model, and the document sco
 
 ![Screen Shot 2021-12-14 at 21.28.36.png](Chapter%2011%20-%20Probabilistic%20information%20retrieval%201862234deabf409db588da5a9b45e7f9/Screen_Shot_2021-12-14_at_21.28.36.png)
 
-- To avoid the possibility of zeroes (such as if every or no relevant document has a particular term) it is fairly standard to add 12 to each of the quantities in the center 4 terms of table. → simple form of **smoothing**.
+- To avoid the possibility of zeroes (such as if every or no relevant document has a particular term) it is fairly standard to add 1/2 to each of the quantities in the center 4 terms of table. → simple form of **smoothing**.
 
 **relative frequency:** count the number of times an event occurred divided by the total number of trials.
 
@@ -168,7 +168,7 @@ some ways for estimate p_t:
     
     ![Screen Shot 2021-12-14 at 21.58.39.png](Chapter%2011%20-%20Probabilistic%20information%20retrieval%201862234deabf409db588da5a9b45e7f9/Screen_Shot_2021-12-14_at_21.58.39.png)
     
-    since the set of documents judged by the user is really small it is often better to combine the new information with the original guess in a process of Bayesian updating:
+    since the set of documents judged by the user is really small it is often better to combine the new information with the original guess in a process of Bayesian updating: (Bayesian prior)
     
     ![Screen Shot 2021-12-14 at 22.01.09.png](Chapter%2011%20-%20Probabilistic%20information%20retrieval%201862234deabf409db588da5a9b45e7f9/Screen_Shot_2021-12-14_at_22.01.09.png)
     
@@ -213,6 +213,7 @@ remove the assumption that terms are independent.
 ### Okapi BM25: a non-binary model
 
 a probabilistic model that incorporates term frequency (i.e., it’s nonbinary) and length normalization.
+
 **BM25 weighting scheme** or **Okapi weighting**
 
 simplest score for document d is just idf weighting of the query terms present:

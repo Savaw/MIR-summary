@@ -2,6 +2,8 @@
 
 **Jaccard Coefficient:**
 
+|A ∩ B|/|A ∪ B|
+
 برای دوتا مجموعه‌ی‫ A و B می‌شه سایز اشتراکشون تقسیم بر سایز اجتماعشون
 
 $**tf_{t,d}$ (Term frequency):**
@@ -53,11 +55,12 @@ Each document is now represented as a real-valued vector of tf-idf weights ∈R|
     ![Screen Shot 2021-11-14 at 00.29.24.png](Chapter%206%20-%20Scoring,%20term%20weighting%20and%20the%20vector%20f57fabdee64443dbac818473772f99f8/Screen_Shot_2021-11-14_at_00.29.24.png)
     
     - ضرب داخلی تقسیم بر طول وکتورها جهت نرمال‌سازی
+    - در واقع می‌شه کسینوس زاویه‌ی بینشون
 
 **Pivot Normalization:**
 
 Cosine normalization produces weights that are too large for short documents and too
-small for long documents.Adjust cosine normalization by linear adjustment: “turning” the average normalization on the pivot
+small for long documents. Adjust cosine normalization by linear adjustment: “turning” the average normalization on the pivot
 
 **SMART notaion:**
 

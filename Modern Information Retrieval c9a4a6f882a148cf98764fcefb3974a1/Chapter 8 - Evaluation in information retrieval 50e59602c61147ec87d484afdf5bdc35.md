@@ -8,7 +8,8 @@
 
 یعنی تعداد داکیومنت‌های مربوط بازگردونده شده بعلاوه‌ی تعداد داکیومنت‌های غیرمربوط بازگردونده نشده تقسیم بر کل تعداد داکیومنت‌ها
 
-- ‫این معیار خوبی برای IR ها نیست.
+- (tp+tn)/(tp+tn+fp+fn)
+- ‫این معیار خوبی برای IR ها نیست
 
 **F measure:** 
 
@@ -50,14 +51,14 @@ average precision = average of P@K
 
 ‫اگر q تا information need داشته باشیم، برای هر کدوم ap رو حساب می‌کنیم و بعد میانگین می‌گیریم.
 
-**Reciprocal Rank:**
+**Reciprocal Rank (RR):**
 
 ‫اگر r رتبه‌ی اولین داکیومنت مرتبط بازگردونده باشه‫ یک به روی r می‌شه این
 1/rank
 
 **MRR (Mean Reciprocal Rank):**
 
-‫میانگین RR ها.
+‫میانگین RR ها برای کوئری‌های مختلف
 
 **Cumulative Gain (CG):**
 
@@ -82,6 +83,8 @@ NDCG = DCG / ideal DCG
 In book:
 
 ![Screen Shot 2021-11-13 at 23.32.24.png](Chapter%208%20-%20Evaluation%20in%20information%20retrieval%2050e59602c61147ec87d484afdf5bdc35/Screen_Shot_2021-11-13_at_23.32.24.png)
+
+Z_kj is a normalization factor calculated to make it so that a perfect ranking’s NDCG at k for query j is 1.
 
 ### Assessing relevance
 

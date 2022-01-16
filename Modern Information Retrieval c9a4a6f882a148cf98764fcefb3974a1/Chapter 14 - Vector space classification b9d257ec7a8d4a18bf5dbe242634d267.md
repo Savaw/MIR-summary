@@ -45,6 +45,7 @@ The classes in Rocchio classification must be approximate spheres with similar r
 - it ignores details of the distribution of points in a class
 - Rocchio often misclassifies this type of **multimodal class**
     - multimodality example: a country than its name has changed
+    - often worse than NB
 - Two-class classification (example: china or non-china) is rarely distributed like spheres
     - the need a modified decision rule of the form:
         
@@ -94,6 +95,8 @@ Sk(d) is the set of d’s k nearest neighbors and Ic(d′) = 1 iff d′ is in cl
 - with short documents and a large stop list, an inverted index may well cut the average test time by a factor of 10 or more.
 - kNN is not optimal for problems with a non-zero **Bayes error rate** (the average error rate of classifiers learned by it for a particular problem)
     - the overall error of 1NN is twice the optimal error rate. For problems with Bayes error rate 0, the error rate of 1NN will approach 0 as the size of the training set increases.
+- non-parametric
+- lazy learning
 
 ## Linear versus nonlinear classifiers
 
@@ -126,8 +129,7 @@ Sk(d) is the set of d’s k nearest neighbors and Ic(d′) = 1 iff d′ is in cl
         
     
 
-If there exists a hyperplane that perfectly separates the two classes, then
-we call the two classes **linearly separable**.
+If there exists a hyperplane that perfectly separates the two classes, then we call the two classes **linearly separable**.
 
 - KNN is nonlinear.
 
@@ -197,7 +199,7 @@ of d being in c, and $\Gamma_D$(d), the prediction of the learned classifier, av
 
 - Bias is large if the learning method produces classifiers that are consistently wrong.
 - Bias is small if
-    1.  the classifiers are consistently right
+    1. the classifiers are consistently right
     2. different training sets cause errors on different documents
     3. different training sets cause positive and negative errors on the same documents, but that average out to close to 0.
 - Linear methods like Rocchio and Naive Bayes have a high bias for nonlinear problems

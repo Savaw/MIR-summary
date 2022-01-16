@@ -20,7 +20,9 @@ Basic Idea: only considers docs containing at least one query term
 
 **Net score**
 
-net-score(*q,d*) = *g(d) +* cosine(*q,d*)
+some combination of g(d) together with the query-dependent score induced
+
+e.g. net-score(*q,d*) = *g(d) +* cosine(*q,d*)
 
 ‫چون common ordering برای داکیومنت‌ها داریم می‌تونیم هم‌زمان پستینگ لیست ترم‌های کوئری رو پروسس کنیم و هم اسکورشون رو به دست بیاریم هم اجتماع پستینگ‌ها رو
 
@@ -31,8 +33,8 @@ net-score(*q,d*) = *g(d) +* cosine(*q,d*)
 
 **Impact ordering**
 
-- Once tft,d gets smaller than a predefined threshold, the remaining postings in the list are skipped
-- We sort each postings list by *wft,d*
+- Once tf_t,d gets smaller than a predefined threshold, the remaining postings in the list are skipped
+- We sort each postings list by *wf_t,d*
     - چون دیگه کامن اردرینگ ندارن نمی‌شه همزمان پراسس کرد
     1. **early termination**
         - stop early after either
@@ -69,5 +71,21 @@ query time:
 - find documents in that leader cluster (followers)
 
 **Query Term Proximity**
+users prefer a document in which most or all of the query terms appear close to each other
 
-todo
+- ω → the width of the smallest window in a document d that contains all the query terms, measured in the number of words in the window.
+- the smaller that ω is, the better that d matches the query.
+- **proximity-weighted scoring function**:
+    - “hand coding” technique:
+        - use query parser to issue a stream of queries:
+            1. Run the user-generated query string as a phrase query
+            2. run the two 2-term phrase queries
+            3. run the individual query terms
+        - **Evidence accumulation:** We need an aggregate scoring function that accumulates evidence of a document’s relevance from multiple sources
+    - importance is assigned by machine learning (Chapter 15)
+
+**Putting it all together:**
+
+![Screen Shot 2022-01-14 at 19.12.25.png](Chapter%207%20-%20Computing%20scores%20in%20a%20complete%20search%20%20dac96433c24640c59feb5460ee512296/Screen_Shot_2022-01-14_at_19.12.25.png)
+
+incomplete

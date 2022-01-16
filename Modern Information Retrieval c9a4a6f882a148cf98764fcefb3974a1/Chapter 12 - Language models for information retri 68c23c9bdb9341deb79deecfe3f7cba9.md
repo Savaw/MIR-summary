@@ -49,7 +49,7 @@ L_d: length of document d
 
 We construct from each document d in the collection a language model M_d
 
-Goal: rank documents by P(d|q)
+Goal: rank documents by P(d|q) = P(q|d)P(d)/P(q)
 
 - P(q) is the same for all documents, so we ignore it
 - P(d) is the prior - often treated as the same for all d
@@ -96,11 +96,13 @@ M_c is a language model built from the entire documentcollection
 - This mixes the probability from the document with the general collection frequency of the word
 - **linear interpolation** language model
 
-**Bayesian Updating Process (Bayesian Smoothing)**
+**Bayesian Updating Process (Bayesian Smoothing - Dirichlet smoothing)**
 
 ![Screen Shot 2021-12-30 at 20.52.22.png](Chapter%2012%20-%20Language%20models%20for%20information%20retri%2068c23c9bdb9341deb79deecfe3f7cba9/Screen_Shot_2021-12-30_at_20.52.22.png)
 
-‫آلفا و لامبدا می‌تونن ثابت نباشن. مثلا تابعی از طول کوئری باشن: برای کوئری‌های کوتاه، سموتینگ کم‌تر مناسبه (لامبدا بزرگ یا آلفا کوچیک) و برای کوئری‌های بلند سموتینگ بیشتر.
+- ‫آلفا و لامبدا می‌تونن ثابت نباشن. مثلا تابعی از طول کوئری باشن: برای کوئری‌های کوتاه، سموتینگ کم‌تر مناسبه (لامبدا بزرگ یا آلفا کوچیک) و برای کوئری‌های بلند سموتینگ بیشتر.
+- Dirichlet performs better for keyword queries
+- Jelinek-Mercer performs better for verbose queries
 
 **summarize** - the retrieval ranking for a query q under the basic LM:
 

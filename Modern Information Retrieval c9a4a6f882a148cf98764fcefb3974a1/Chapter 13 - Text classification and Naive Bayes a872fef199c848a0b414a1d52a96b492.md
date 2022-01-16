@@ -30,6 +30,7 @@ classification types:
 
 - supervised
 - We denote the supervised learning method by $\Gamma$ and write $\Gamma$(D) = γ. The learning method $\Gamma$ takes the training set D as input and returns the learned classification function γ.
+
 - **one-of** problem: each object belong to one class
 - **any-of** problem: object is not restricted to belong to one class
 
@@ -109,7 +110,7 @@ assumptions:
 - conditional independence
 - positional independence
 
-- optimal classifier (in the sense of minimal error rate on new data) for data where the independence assumptions do hold.
+- NB is optimal classifier (in the sense of minimal error rate on new data) for data where the independence assumptions do hold.
 
 Q: How can NB be a good text classifier when its model of natural language is so oversimplified?
 A: The answer is that even though the probability estimates of NB are of low quality, its classification decisions are surprisingly good.
@@ -124,11 +125,8 @@ decision
 
 when to choose:
 
-- squeezing out a few extra percentage
-points of accuracy is not worth the trouble in a text classification application
-- a very large amount of training data is available and there is more to be
-gained from training on a lot of data than using a better classifier on a smaller
-training set
+- squeezing out a few extra percentage points of accuracy is not worth the trouble in a text classification application
+- a very large amount of training data is available and there is more to be gained from training on a lot of data than using a better classifier on a smaller training set
 - if its robustness to concept drift can be exploited (=used)
 
 ## Feature selection
@@ -150,8 +148,7 @@ MI measures how much information the presence/absence of a term contributes to m
 
 U is a random variable that takes values e_t = 1 (the document contains term t) and e_t = 0 (the document does not contain t)
 
-C is a random variable that takes values e_c = 1 (the document is in class
-c) and e_c = 0 (the document is not in class c)
+C is a random variable that takes values e_c = 1 (the document is in class c) and e_c = 0 (the document is not in class c)
 
 for feature selection using MI we compute the utility measure as A(t, c) = I(U_t, C_c) and select the k terms with the largest values.
 
@@ -184,7 +181,7 @@ collection frequency for the multinomial model
 We will use **effectiveness** as a generic term for measures that evaluate the quality of classification decisions, including precision, recall, F1, and accuracy.
 **Performance** refers to the computational efficiency of classification and IR systems in this book.
 
-**Macroaveraging:** computes a simple aver age over classes.
+**Macroaveraging:** computes a simple average over classes.
 
 **Microaveraging:** pools per-document decisions across classes, and then computes an effectiveness measure on the pooled contingency table.
 
@@ -192,3 +189,36 @@ We will use **effectiveness** as a generic term for measures that evaluate the q
 - large classes dominate small classes in microaveraging → Because the F1 measure ignores
 true negatives and its magnitude is mostly determined by the number of true positives
 - To get a sense of effectiveness on small classes → compute macroaveraged results
+
+**Hold-out method:**
+
+![Screen Shot 2022-01-15 at 12.10.07.png](Chapter%2013%20-%20Text%20classification%20and%20Naive%20Bayes%20a872fef199c848a0b414a1d52a96b492/Screen_Shot_2022-01-15_at_12.10.07.png)
+
+pros:
+
+- computationally less expensive
+- time complexities are less
+
+cons:
+
+- can have a high variance
+- evaluation will be different every time this division changes
+- not well suited for sparse data-set. (not equally distributed)
+
+**Random sub-sampling:**
+
+a variation of the hold-out method in which hold-out is repeated k times
+
+![Screen Shot 2022-01-15 at 12.13.38.png](Chapter%2013%20-%20Text%20classification%20and%20Naive%20Bayes%20a872fef199c848a0b414a1d52a96b492/Screen_Shot_2022-01-15_at_12.13.38.png)
+
+- performs K data splits of the dataset
+- true error estimate is obtained as the average of the separate estimates
+- cons: chances of selecting same record in test set for other iteration
+
+**Cross validation method**
+
+K-fold cross validation
+
+The initial data are randomly partitioned into K mutually exclusive subsets or folds, S1, S2, ..., SK, each of approximately equal size.
+
+![Screen Shot 2022-01-15 at 12.14.29.png](Chapter%2013%20-%20Text%20classification%20and%20Naive%20Bayes%20a872fef199c848a0b414a1d52a96b492/Screen_Shot_2022-01-15_at_12.14.29.png)

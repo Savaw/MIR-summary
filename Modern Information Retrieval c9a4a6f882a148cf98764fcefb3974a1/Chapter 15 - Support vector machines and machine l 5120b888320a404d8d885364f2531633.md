@@ -39,11 +39,11 @@ The linear classifier is then:
 
 ![Screen Shot 2022-01-10 at 18.39.35.png](Chapter%2015%20-%20Support%20vector%20machines%20and%20machine%20l%205120b888320a404d8d885364f2531633/Screen_Shot_2022-01-10_at_18.39.35.png)
 
-**functional margin:** we define functional margin of of the ith example x_i with respect to a hyperplane <w, b> as the quantity $y_i(\vec{w}^T\vec{x}_i+b)$.
+**functional margin:** we define functional margin of the ith example x_i with respect to a hyperplane <w, b> as the quantity $y_i(\vec{w}^T\vec{x}_i+b)$.
 
 The functional margin of a data set with respect to a decision surface is then twice the functional margin of any of the points in the data set with minimal functional margin.
 
-problem: the value is underconstrained, we can scale w and b
+problem: the value is under-constrained, we can scale w and b arbitrary
 
 we will compute real distance of x to hyperplane <w, b>:
 
@@ -61,9 +61,11 @@ if we set |w|=1 then function margin = geometric margin
 
 ‫و برای یه نقطه‌ای هم حتما این نابرابری، برابری باشه که اون نقطه می‌شه یکی از ساپورت وکتورها.
 
-‫در نتیجه جئومتریک مارجینمون می‌شه:
+‫در نتیجه فانکشنال مارجینمون می‌شه ۲ و جئومتریک مارجینمون می‌شه:
 
 2/|w|
+
+recall: |w| = w^Tw
 
 ‫و در نهایت می‌تونیم این جوری SVM رو به عنوان یک مسئله‌ی مینیمایزیشن بنویسیم:
 
@@ -125,7 +127,7 @@ A **kernel function** K is such a function that corresponds to a dot product in 
 - no labeled training data, existing staff knowledgeable:
     - hand-written rules
 - little data:
-    - supervised classifier →a classifier with high bias
+    - supervised classifier → a classifier with high bias
     - semi-supervised training methods; bootstrapping or the EM algorithm
         - semi-supervised SVM → **transductive SVMs**
 - get more labeled data:
@@ -152,7 +154,7 @@ default: terms as features
 **feature engineering:** the process of selecting, manipulating, and transforming raw data into features that can be used in supervised learning
 
 - Classification problems contain large numbers of terms which can be conveniently grouped e.x. year, ISBN, numbers, dates, etc. 
-→  converting these into distinguished tokens 
+→ converting these into distinguished tokens 
 → reduce the number of features and feature sparseness
 → enhance effectiveness and classifier speed
 - increase number of features by matching parts of words, and by matching selected multiword patterns that are particularly discriminative.
@@ -171,4 +173,4 @@ the scoring function is a linear combination of two factors:
 1. the vector space cosine similarity between query and document
 2. the minimum window width ω within which the query terms lie
 
-todo todo todo
+incomplete

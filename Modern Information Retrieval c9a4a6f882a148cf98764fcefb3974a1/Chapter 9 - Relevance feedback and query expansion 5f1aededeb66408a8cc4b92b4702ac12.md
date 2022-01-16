@@ -6,7 +6,7 @@ problem:
 
 solution:
 
-- global methods
+- global methods (i.e., a resource that is not query dependent)
     - Query expansion/reformulation with a thesaurus or WordNet
     - Query expansion via automatic thesaurus generation
     - Techniques like spelling correction
@@ -23,10 +23,7 @@ idea: involve the user in the retrieval process so as to improve the final resul
 
 A way of incorporating relevance feedback information into the vector space model.
 
-**Underlying theory**: We want to find a **query** vector, denoted as $\vec{q}$, that
-maximizes similarity with relevant documents while minimizing similarity
-with nonrelevant documents. If C_r is the set of relevant documents and C_nr
-is the set of nonrelevant documents, then we wish to find:
+**Underlying theory**: We want to find a **query** vector, denoted as $\vec{q}$, that maximizes similarity with relevant documents while minimizing similarity with nonrelevant documents. If C_r is the set of relevant documents and C_nr is the set of nonrelevant documents, then we wish to find:
 
 $$
 q_{opt} = \argmax_{q} [sim(\vec{q}, C_r) − sim(\vec{q}, C_{nr})],
@@ -65,12 +62,12 @@ $D_r, D_{nr}$ → set of known relevant and nonrelevant documents
 
 - build a classifier
 
-A Naive Bayes probabilistic model:
+A **Naive Bayes** probabilistic model:
 If R is a Boolean indicator variable expressing the relevance of a document, then we can estimate $P(x_t=1|R)$ the probability of a term t appearing in a document, depending on whether it is relevant or not, as:
 
 $P(x_t = 1|R = 1) = \dfrac{|VR_t|}{|VR|}$
 
-$P(x_t = 1|R = 1) = \dfrac{df_t-|VR_t|}{N-|VR|}$
+$P(x_t = 1|R = 0) = \dfrac{df_t-|VR_t|}{N-|VR|}$
 
 VR is the set of known relevant documents.
 
@@ -105,8 +102,10 @@ practical problems:
 ### Relevance feedback on the web
 
 - little used in web search
-- web search users are only rarely concerned with getting sufficient recall.
+- users are rarely concerned with getting sufficient recall.
+- users are mainly interested in fast retrieval
 - very successful use of web link structure can also be viewed as implicit feedback
+- use of implicit feedback such as clickstream-based feedback
 
 ### Evaluation of relevance feedback strategies
 
@@ -139,3 +138,45 @@ but it is difficult to validly compare performance with and without relevance fe
 using implicit feedback
 
 ex: clicks on links
+
+## Global methods for query reformulation
+
+### Query expansion
+
+users give additional input on query words or phrases, possibly suggesting additional query terms.
+
+Q: How to generate alternative or expanded queries for the user?
+
+A: global analysis
+
+- using some form of thesaurus. For each term t in a query, the query can be automatically expanded with synonyms and related words of t from the thesaurus.
+- combined with ideas of term weighting: weight added terms less than original query terms
+
+**Methods for building a thesaurus**
+
+- A controlled vocabulary that is maintained by human editors. Here, there is a canonical term for each concept.
+- A manual thesaurus. Here, human editors have built up sets of synonymous names for concepts, without designating a canonical term.
+- An automatically derived thesaurus. using word co-occurrence statistics.
+- Query reformulations based on query log mining. Here, we exploit the manual query reformulations of other users.
+
+**Automatic thesaurus generation**
+
+1. exploit word cooccurrence
+    - more robust
+    - begin with a term-document matrix A, C = AA^T, then C_u,v is a similarity score between terms u and v
+2. use a shallow grammatical analysis of the text
+    - more accurate
+    
+
+notes about automatic:
+
+- suffer from both false positives and false negatives
+- since the terms in the automatic thesaurus are highly correlated in documents anyway (and often the collection used to derive the thesaurus is the same as the one being indexed), this form of query expansion may not retrieve many additional documents.
+
+notes about query expansion:
+
+- effective in increasing recall.
+- may also significantly decrease precision, particularly when the query contains ambiguous terms.
+- a domain specific thesaurus is required in many uses
+- Overall, query expansion is less successful than relevance feedback, though it may be as good as pseudo relevance feedback.
+- advantage: being much more understandable to the system user.

@@ -129,16 +129,18 @@ in comparison to bottom-up:
 - more efficient if we do not generate a complete hierarchy
 - more accurate hierarchies in some circumstances
 
+→ algorithm: **Bisecting K-means**
+
 ## Cluster labeling
 
-**Differential cluster labeling:** 
+**Differential cluster labeling:  (Discriminative labeling)**
 
 Selects cluster labels by comparing the distribution of terms in one cluster with that of other clusters.
 
 - feature selection methods like MI and χ2 can be used
 - a differential test + a penalty for rare terms → often gives the best labeling results
 
-**Cluster-internal labeling:**
+**Cluster-internal labeling: (Non-discriminative labeling)**
 
 Computes a label that solely depends on the cluster itself, not on other clusters.
 

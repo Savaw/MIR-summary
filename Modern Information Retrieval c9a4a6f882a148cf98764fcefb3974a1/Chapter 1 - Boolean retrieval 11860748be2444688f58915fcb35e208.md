@@ -1,8 +1,6 @@
 # Chapter 1 - Boolean retrieval
 
-**Information retrieval (IR)** is finding material (usually documents) of
-an unstructured nature (usually text) that satisfies an information need
-from within large collections (usually stored on computers).
+**Information retrieval (IR)** is finding material (usually documents) of an unstructured nature (usually text) that satisfies an information need from within large collections (usually stored on computers).
 
 Distinguished by the scale at which they operate:
 

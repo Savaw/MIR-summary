@@ -1,19 +1,19 @@
 # Modern Information Retrieval Summary
 
-**Fall 2021**
+**Fall 2021 - Winter 2022**
 
 A not-complete summary of the “Introduction to Information Retrieval” book, mainly in English, with some Persian in between.
 
 Math equations are not shown correctly in Github. You can:
 
-Clone and use markdown preview features of editors such as VScode 
+**Check it on [Notion](https://savaw.notion.site/Modern-Information-Retrieval-c9a4a6f882a148cf98764fcefb3974a1)** (Recommended)
 
-OR
+or
 
-**Check it [on Notion](https://savaw.notion.site/Modern-Information-Retrieval-c9a4a6f882a148cf98764fcefb3974a1).** (Recommended)
-
+Clone and use markdown preview features of editors such as VScode.
 
 ## Source
+
 [Introduction to Information Retrieval](https://nlp.stanford.edu/IR-book/)
 
 
@@ -46,3 +46,11 @@ OR
 [Chapter 16 - Flat Clustering](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2016%20-%20Flat%20Clustering%20405f3b20520d40b1a6c695193ec958d4.md)
 
 [Chapter 17 - Hierarchical clustering](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2017%20-%20Hierarchical%20clustering%20a8a83a4ccea94da6bccab71093bc7075.md)
+
+[Chapter 18 - Matrix decompositions and latent semantic indexing](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2018%20-%20Matrix%20decompositions%20and%20latent%20sema%203a44e6ed189e4574ad34b43818318622.md)
+
+[Chapter 19 - Web search basics](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2019%20-%20Web%20search%20basics%201c9aba2910df4787bb5965e7e06dff5d.md)
+
+[Chapter 20 - Web crawling and indexes](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2020%20-%20Web%20crawling%20and%20indexes%20d5de991cf67e45a4810a67d0da406e60.md)
+
+[Chapter 21 - Link analysis](Modern%20Information%20Retrieval%20c9a4a6f882a148cf98764fcefb3974a1/Chapter%2021%20-%20Link%20analysis%20d4ca32a934584f719abcd9f92ada5001.md)

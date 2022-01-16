@@ -42,9 +42,7 @@ Given:
 2. a desired number of clusters K
 3. an **objective function** that evaluates the quality of a clustering
 
-we want to compute an assignment γ : D → {1, . . . , K} that minimizes (or, in other
-cases, maximizes) the objective function. In most cases, we also demand that
-γ is surjective, i.e., that none of the K clusters is empty.
+we want to compute an assignment γ : D → {1, . . . , K} that minimizes (or, in other cases, maximizes) the objective function. In most cases, we also demand that γ is surjective, i.e., that none of the K clusters is empty.
 
 A note on terminology:
 
@@ -66,7 +64,7 @@ selection of K:
 
 ## Evaluation of clustering
 
-**internal criterion:** attaining high intra-cluster similarity and low inter cluster similarity (via objective function)
+**internal criterion:** attaining high intra-cluster similarity and low inter-cluster similarity (via objective function)
 
 alternative to internal criteria → direct evaluation in the application of interest
 
@@ -100,7 +98,7 @@ four external criteria of clustering quality:
     - MI has the same problem as purity: a clustering with K = N has maximum MI
         - the denominator fix this problem → entropy tends to increase with the number of clusters
     - NMI is normalized, we can use it to compare clusterings with different numbers of clusters
-    1. **Rank Index**
+    1. **Rand Index**
         
         ![Screen Shot 2022-01-11 at 12.22.50.png](Chapter%2016%20-%20Flat%20Clustering%20405f3b20520d40b1a6c695193ec958d4/Screen_Shot_2022-01-11_at_12.22.50.png)
         
@@ -171,7 +169,7 @@ If an outlier is chosen as an initial seed it will result intot **singleton clus
 
 **Seed selection**
 
-1.  excluding outliers from the seed set 
+1. excluding outliers from the seed set 
 2. trying out multiple starting points and choosing the clustering with lowest cost
 3. obtaining seeds from another method such as hierarchical clustering
 4. compute seeds that are not selected from the vectors to be clustered:
